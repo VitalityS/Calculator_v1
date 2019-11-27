@@ -1,9 +1,26 @@
+import java.util.Scanner;
 public class Arithmetic {
-/**@see #operation выводит в консоль результат арифметической операции,
+   private double a;
+   private String oper;
+   private double b;
+/**@see #calculation выводит в консоль результат арифметической операции,
  * с округлением до 4 цифр после запятой.
  *В качестве параметров передаются введеные в консоль дробные числа
  */
-    public void operation(double a, double b, String oper) {
+
+public void inputDataForTheCalculation(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("Введите первое число для вычисления:");
+    a = in.nextDouble();
+    System.out.println("Введите арифметическую операцию: '+' '-' '*' '/'");
+    oper = in.next();
+    System.out.println("Введите второе число для вычисления:");
+    b = in.nextDouble();
+    //закрываем поток ввода
+    in.close();
+}
+
+    public void calculation() {
         double result;
         switch (oper) {
             case "+":
